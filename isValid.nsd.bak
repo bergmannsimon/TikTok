@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:nsd="https://structorizer.fisch.lu" version="3.28-08" preRepeat="until " postFor="to" preReturn="return" postForIn="in" preWhile="while " output="OUTPUT" input="INPUT" preFor="for" preExit="exit" preLeave="leave" ignoreCase="true" preForIn="foreach" stepFor="by" author="Mo" created="2018-12-13" changedby="Mo" changed="2018-12-13" origin="Structorizer 3.28-08" text="&#34;isValid(arr)&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<for text="&#34;for i, i &#60; arr.lenth, i++&#34;" comment="&#34;&#34;" counterVar="dummy_counter" startValue="i, i &#60; arr.lenth, i++" stepConst="1" style="FREETEXT" color="ffffff" disabled="0">
+			<qFor color="ffffff">
+			</qFor>
+		</for>
+	</children>
+</root>

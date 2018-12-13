@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:nsd="https://structorizer.fisch.lu" version="3.28-08" preRepeat="until " postFor="to" preReturn="return" postForIn="in" preWhile="while " output="OUTPUT" input="INPUT" preFor="for" preExit="exit" preLeave="leave" ignoreCase="true" preForIn="foreach" stepFor="by" author="Mo" created="2018-12-13" changedby="Mo" changed="2018-12-13" origin="Structorizer 3.28-08" text="&#34;isValid(arr)&#34;" comment="&#34;&#34;" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;n, m, k = 0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+		<for text="&#34;for i, i &#60; arr.lenth, i++&#34;" comment="&#34;&#34;" counterVar="dummy_counter" startValue="i, i &#60; arr.lenth, i++" stepConst="1" style="FREETEXT" color="ffffff" disabled="0">
+			<qFor>
+				<for text="&#34;for j, j &#60; arr[i].length, j++&#34;" comment="&#34;&#34;" counterVar="dummy_counter" startValue="j, j &#60; arr[i].length, j++" stepConst="1" style="FREETEXT" color="ffffff" disabled="0">
+					<qFor>
+						<case text="&#34;arr[i][j].length&#34;,&#34;'X'&#34;,&#34;'O'&#34;,&#34;''&#34;,&#34;else&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+							<qCase>
+								<instruction text="&#34;n++&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+							</qCase>
+							<qCase>
+								<instruction text="&#34;m++&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+							</qCase>
+							<qCase>
+								<instruction text="&#34;k++&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+							</qCase>
+							<qCase>
+								<instruction text="&#34;print &#34;&#34;error with two-dimensional playfield array&#34;&#34;&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+							</qCase>
+						</case>
+					</qFor>
+				</for>
+			</qFor>
+		</for>
+		<alternative text="&#34;()&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+			<qTrue color="ffffff">
+			</qTrue>
+			<qFalse color="ffffff">
+			</qFalse>
+		</alternative>
+		<instruction text="&#34;g = k % 2&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+		<alternative text="&#34;(g == 0)&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+			<qTrue>
+				<alternative text="&#34;(n == m)&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+					<qTrue>
+						<instruction text="&#34;return true&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+					</qTrue>
+					<qFalse>
+						<instruction text="&#34;return false&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+					</qFalse>
+				</alternative>
+			</qTrue>
+			<qFalse>
+				<instruction text="&#34;d = Math.abs(n - m)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+				<alternative text="&#34;(d &#60;= 1)&#34;" comment="&#34;&#34;" color="ffffff" disabled="0">
+					<qTrue>
+						<instruction text="&#34;return true&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+					</qTrue>
+					<qFalse>
+						<instruction text="&#34;return false&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+					</qFalse>
+				</alternative>
+			</qFalse>
+		</alternative>
+	</children>
+</root>
