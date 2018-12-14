@@ -1,8 +1,9 @@
+//example input
 const startingLetter = 'X';
 const array = [
-    ['X', 'X', 'X'],
-    ['X', 'X', 'X'],
-    ['X', 'X', 'X']
+    ['O', '', 'O'],
+    ['X', 'X', 'O'],
+    ['O', 'X', 'X']
 ];
 
 // function to check if the current playfield is valid
@@ -52,5 +53,71 @@ function isValid(arr, startLetter) {
     return result;
 }
 
+//check if val is 'X'
+function checkWinX(val) {
+    return val == 'X';
+}
 
-console.log("Array is valid: " + isValid(array, startingLetter));
+//check if val is 'O'
+function checkWinO(val) {
+    return val == 'O';
+}
+
+//check if arr contains ''
+function containsEmptyString(arr) {
+    for (let key in arr) {
+        if (arr[key] === '') {
+            return true;
+        }
+    }
+    return false;
+}
+
+//check the status of the game
+function evaluate(arr) {
+    //initiate variables
+    let row1, row2, row3, col1, col2, col3, rex1, rex2, all, result;
+
+    //create array for each row
+    row1 = arr[0];
+    row2 = arr[1];
+    row3 = arr[2];
+
+    //create array for each column
+    col1 = [arr[0][0], arr[1][0], arr[2][0]];
+    col2 = [arr[0][1], arr[1][1], arr[2][1]];
+    col3 = [arr[0][2], arr[1][2], arr[2][2]];
+
+    //create array for each diagonal
+    rex1 = [arr[0][0], arr[1][1], arr[2][2]];
+    rex2 = [arr[0][2], arr[1][1], arr[2][0]];
+
+    //create array of all rows, columns and diagonals
+    all = [row1, row2, row3, col1, col2, col3, rex1, rex2];
+
+    //loop through all arrays and check for win, draw or undecided
+    for (let key in all) {
+        result = all[key].every(checkWinX);
+        if (result === true) {
+            return 'X';
+        }
+        result = all[key].every(checkWinO);
+        if (result === true) {
+            return 'O';
+        }
+    }
+    for (let key in all) {
+        result = containsEmptyString(all[key]);
+        if (result === true) {
+            return 'undecided';
+        }
+    }
+    return 'draw';
+}
+
+//execute example
+if (isValid(array, startingLetter)) {
+    console.log(evaluate(array));
+} else {
+    console.log("Array invalid");
+}
